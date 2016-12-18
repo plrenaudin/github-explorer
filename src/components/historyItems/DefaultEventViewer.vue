@@ -14,19 +14,26 @@
       </slot>
     </div>
     <div class="target">
-      {{event.repo.name}}
+      <a :href="targetLocation">{{event.repo.name}}</a>
     </div>
   </md-list-item>
 </template>
 
 <script>
 import DateUtils from '../../utils/DateUtils.js'
+import common from '../../client/common.js'
+
 export default {
   name: 'default-event',
   props: ['event'],
   methods: {
     formatDateToCalendar(date) {
       return DateUtils.formatDateToCalendar(date)
+    }
+  },
+  computed: {
+    targetLocation() {
+      return common.websiteURL + '/' + this.event.repo.name
     }
   }
 }

@@ -24,7 +24,7 @@
             <div class="md-subhead">
               <md-tooltip md-direction="left">Created</md-tooltip>
               <svg class="octicon" aria-hidden="true"><use xlink:href="#clock" /></svg>
-              {{details.created_at}}
+              {{formatDateToCalendar(details.created_at)}}
             </div>
             <div class="md-subhead" v-if="details.company">
               <md-tooltip md-direction="left">Company</md-tooltip>
@@ -67,6 +67,7 @@
 import UserAPI from '../client/UserAPI.js'
 import UserHistory from './UserHistory.vue'
 import common from '../client/common.js'
+import DateUtils from '../utils/DateUtils.js'
 
 export default {
   name: 'user-details',
@@ -79,6 +80,11 @@ export default {
       details: {},
       loading: false,
       websiteUrl: common.websiteURL
+    }
+  },
+  methods: {
+    formatDateToCalendar(date) {
+      return DateUtils.formatDateToCalendar(date)
     }
   },
   created () {

@@ -5,12 +5,14 @@
     </div>
     <div slot="title">
       {{computedModel.title}}
+      <a v-if="computedModel.ref" :href="computedModel.location">{{computedModel.ref}}</a>
     </div>
   </default-event-viewer>
 </template>
 
 <script>
 import DefaultEventViewer from './DefaultEventViewer.vue'
+import common from '../../client/common.js'
 export default {
   name: 'create-event',
   components: {
@@ -28,12 +30,16 @@ export default {
         case 'branch':
           return {
             picto:'git-branch',
-            title: `Created the branch '${this.event.payload.ref}'`
+            title: 'Created the branch',
+            ref: this.event.payload.ref,
+            location: common.websiteURL + '/' + this.event.repo.name + '/tree/' + this.event.payload.ref
           }
         case 'tag':
           return {
             picto:'tag',
-            title: `Created the tag '${this.event.payload.ref}'`
+            title: 'Created the tag',
+            ref: this.event.payload.ref,
+            location: common.websiteURL + '/' + this.event.repo.name + '/tree/' + this.event.payload.ref
           }
         default:
           return {
