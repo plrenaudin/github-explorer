@@ -54,6 +54,19 @@ $light-grey: #ccc;
     list-style-type: none;
   }
 }
+/*======================= History ===========================*/
+
+.eventTemplate {
+  .icon {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    .octicon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
 
 /*======================= Results ===========================*/
 .results {

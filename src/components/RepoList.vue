@@ -29,15 +29,15 @@
               {{item.language}}
             </div>
             <md-button @click.stop :href="githubURL + '/' + item.full_name + '/network'">
-              <svg version="1.1" viewBox="0 0 10 16" class="octicon" aria-hidden="true"><use xlink:href="#repo-forked" /></svg>
+              <svg class="octicon" aria-hidden="true"><use xlink:href="#repo-forked" /></svg>
               {{item.forks}}
             </md-button>
             <md-button @click.stop :href="githubURL + '/' + item.full_name + '/stargazers'">
-              <svg version="1.1" viewBox="0 0 10 16" class="octicon" aria-hidden="true"><use xlink:href="#star" /></svg>
+              <svg class="octicon" aria-hidden="true"><use xlink:href="#star" /></svg>
               {{item.stargazers_count}}
             </md-button>
             <md-button @click.stop :href="githubURL + '/' + item.full_name + '/issues'">
-              <svg version="1.1" viewBox="0 0 10 16" class="octicon" aria-hidden="true"><use xlink:href="#issue-opened" /></svg>
+              <svg class="octicon" aria-hidden="true"><use xlink:href="#issue-opened" /></svg>
 
               {{item.open_issues_count}}
             </md-button>
