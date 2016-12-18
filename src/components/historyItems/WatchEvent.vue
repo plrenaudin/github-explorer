@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#eye" /></svg>
     </div>
+    <div slot="title">
+      Is now watching this repository
+    </div>
   </default-event-viewer>
 </template>
 

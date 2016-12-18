@@ -22,7 +22,7 @@
               {{details.location}}
             </div>
             <div class="md-subhead">
-              <md-tooltip md-direction="left">Created</md-tooltip>
+              <md-tooltip md-direction="left">Joined</md-tooltip>
               <svg class="octicon" aria-hidden="true"><use xlink:href="#clock" /></svg>
               {{formatDateToCalendar(details.created_at)}}
             </div>

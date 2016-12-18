@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#repo-forked" /></svg>
     </div>
+    <div slot="title">
+      Forked this repository <a :href="event.payload.forkee.html_url">here</a>
+    </div>
   </default-event-viewer>
 </template>
 

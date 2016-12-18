@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#trashcan" /></svg>
     </div>
+    <div slot="title">
+      Deleted the {{event.payload.ref_type}} {{event.payload.ref}}</a>
+    </div>
   </default-event-viewer>
 </template>
 

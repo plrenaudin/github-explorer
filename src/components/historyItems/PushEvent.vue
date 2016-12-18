@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#repo-push" /></svg>
     </div>
+    <div slot="title">
+      Pushed {{event.payload.commits.length}} commits
+    </div>
   </default-event-viewer>
 </template>
 

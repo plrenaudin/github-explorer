@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#comment" /></svg>
     </div>
+    <div slot="title">
+      Commented on the issue <a :href="event.payload.comment.html_url">#{{event.payload.issue.number}}</a>
+    </div>
   </default-event-viewer>
 </template>
 

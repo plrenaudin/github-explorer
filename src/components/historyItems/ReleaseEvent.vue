@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#versions" /></svg>
     </div>
+    <div slot="title">
+      Released a new version <a :href="event.payload.release.html_url">{{event.payload.release.tag_name}}</a>
+    </div>
   </default-event-viewer>
 </template>
 

@@ -3,6 +3,9 @@
     <div slot="picto">
       <svg class="octicon" aria-hidden="true"><use xlink:href="#issue-opened" /></svg>
     </div>
+    <div slot="title">
+      Opened this issue <a :href="event.payload.issue.html_url">#{{event.payload.issue.number}}</a>
+    </div>
   </default-event-viewer>
 </template>
 

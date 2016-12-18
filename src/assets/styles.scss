@@ -130,5 +130,9 @@ $light-grey: #ccc;
   }
 }
 
+.md-subhead {
+  display: flex;
+}
+
 /*=============================== Animations =======================*/
 @keyframes spin { 100% { transform:rotate(360deg); } }
