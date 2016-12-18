@@ -1,5 +1,6 @@
 <template>
   <div class="results">
+    <svg class="octicon backheader" aria-hidden="true"><use xlink:href="#repo" /></svg>
     <template v-if="loading">
       <div class="loading">
         <em>Loading...</em>

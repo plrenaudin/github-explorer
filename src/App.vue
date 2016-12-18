@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import './assets/styles.scss';
   @import '../node_modules/vue-material/dist/vue-material.css';
   @import '../node_modules/octicons/build/octicons.css';
+  @import './assets/styles.scss';
 </style>

@@ -36,13 +36,6 @@ $light-grey: #ccc;
     }
   }
 
-/*======================= Header ===========================*/
-.header {
-  .fa {
-    color: black;
-  }
-}
-
 /*======================= User details ===========================*/
 .userDetails {
   .userInfo {
@@ -72,6 +65,15 @@ $light-grey: #ccc;
 .results {
   padding: 5px;
   flex: 1 1 auto;
+  position: relative;
+  .backheader{
+    width: 50px;
+    height: 50px;
+    opacity: .5;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
   .statistics {
     display: flex;
     justify-content: space-between;
@@ -130,9 +132,15 @@ $light-grey: #ccc;
   }
 }
 
+/*=============================== FIXME =======================*/
+
 .md-subhead {
   display: flex;
 }
-
+.resultLists{
+  .md-theme-default.md-list {
+    background-color: transparent;
+  }
+}
 /*=============================== Animations =======================*/
 @keyframes spin { 100% { transform:rotate(360deg); } }
