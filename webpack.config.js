@@ -2,11 +2,14 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main: './src/main.js',
+    vendor: ['vue-material', 'axios', 'octicons']
+  },
   output: {
+    filename: '[name].js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    publicPath: '/dist/'
   },
   module: {
     rules: [
@@ -14,14 +17,11 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
+          cssSourceMap: false,
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this nessessary.
             'scss': 'vue-style-loader!css-loader!sass-loader',
             'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
           }
-          // other vue-loader options go here
         }
       },
       {
@@ -39,11 +39,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.common.js'
-    }
-  },
   devServer: {
     historyApiFallback: true,
     noInfo: true
@@ -52,7 +47,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#cheap-source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -61,13 +56,15 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
       compress: {
         warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
     })
   ])
 }

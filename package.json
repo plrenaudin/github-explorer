@@ -6,11 +6,11 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "info": "cross-env NODE_ENV=production webpack --json | webpack-bundle-size-analyzer"
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "moment": "^2.17.1",
     "octicons": "^5.0.1",
     "sass-loader": "^4.1.0",
     "svg-inline-loader": "^0.7.1",

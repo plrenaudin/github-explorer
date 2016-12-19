@@ -10,7 +10,7 @@
         <span>{{event.type}}</span>
       </slot>
       <slot name="description">
-        <span>{{formatDateToCalendar(event.created_at)}}</span>
+        <span :title="event.created_at">{{formatDateToCalendar(event.created_at)}}</span>
       </slot>
     </div>
     <div class="target">
