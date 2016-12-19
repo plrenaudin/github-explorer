@@ -1,7 +1,7 @@
 import axios from 'axios'
 import common from './common'
 
-const search =  (query) => {
+const search = (query) => {
   return axios.get(common.rootApiURL + '/search/repositories', {
     params: {
       q: query
@@ -9,6 +9,11 @@ const search =  (query) => {
   })
 }
 
+const details = (owner, name) => {
+  return axios.get(common.rootApiURL + '/repos/' + owner + '/' + name)
+}
+
 export default {
-  search
+  search,
+  details
 }
