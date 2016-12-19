@@ -38,6 +38,7 @@ import forkevent from './historyItems/ForkEvent.vue'
 import releaseevent from './historyItems/ReleaseEvent.vue'
 import deleteevent from './historyItems/DeleteEvent.vue'
 import issuecommentevent from './historyItems/IssueCommentEvent.vue'
+import commitcommentevent from './historyItems/CommitCommentEvent.vue'
 import issuesevent from './historyItems/IssuesEvent.vue'
 import memberevent from './historyItems/MemberEvent.vue'
 import pullrequestreviewcommentevent from './historyItems/PullRequestReviewCommentEvent.vue'
@@ -53,6 +54,7 @@ export default {
     pullrequestevent,
     pushevent,
     issuecommentevent,
+    commitcommentevent,
     createevent,
     forkevent,
     releaseevent,

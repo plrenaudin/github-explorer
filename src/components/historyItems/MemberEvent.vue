@@ -4,7 +4,7 @@
       <svg class="octicon" aria-hidden="true"><use xlink:href="#organization" /></svg>
     </div>
     <div slot="title">
-      Added <a :href="event.payload.member.html_url">{{event.payload.member.login}}</a> to this repository
+      User {{event.action}} <a :href="event.payload.member.html_url">{{event.payload.member.login}}</a> to this repository
     </div>
   </default-event-viewer>
 </template>
