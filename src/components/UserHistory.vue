@@ -39,6 +39,7 @@ import releaseevent from './historyItems/ReleaseEvent.vue'
 import deleteevent from './historyItems/DeleteEvent.vue'
 import issuecommentevent from './historyItems/IssueCommentEvent.vue'
 import issuesevent from './historyItems/IssuesEvent.vue'
+import memberevent from './historyItems/MemberEvent.vue'
 import pullrequestreviewcommentevent from './historyItems/PullRequestReviewCommentEvent.vue'
 
 let rootContext = this
@@ -56,6 +57,7 @@ export default {
     forkevent,
     releaseevent,
     issuesevent,
+    memberevent,
     deleteevent
   },
   data () {
