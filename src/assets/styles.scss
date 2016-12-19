@@ -77,22 +77,21 @@ $light-grey: #ccc;
     right: 10px;
     top: 10px;
   }
-  .statistics {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: center;
-    .md-button {
-      min-width: 70px;
-      padding: 0;
-      margin: 2px 3px;
-    }
-    a:hover {
-      color:$blue;
-      .fa {
-        color:$blue;
-      }
-    }
+}
+
+/* ====================== Repo statistics ===================*/
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  .md-button {
+    min-width: 70px;
+    padding: 0;
+    margin: 2px 3px;
+  }
+  a:hover {
+    color:$blue;
   }
 }
 

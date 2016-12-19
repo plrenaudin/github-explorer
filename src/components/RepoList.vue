@@ -25,24 +25,7 @@
             <span>{{descriptionSummary(item.description)}}</span>
           </div>
 
-          <div class="statistics">
-            <div class="md-caption">
-              {{item.language}}
-            </div>
-            <md-button @click.stop :href="item.html_url + '/network'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#repo-forked" /></svg>
-              {{item.forks}}
-            </md-button>
-            <md-button @click.stop :href="item.html_url + '/stargazers'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#star" /></svg>
-              {{item.stargazers_count}}
-            </md-button>
-            <md-button @click.stop :href="item.html_url + '/issues'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#issue-opened" /></svg>
-
-              {{item.open_issues_count}}
-            </md-button>
-          </div>
+          <repo-stats :details="item"></repo-stats>
         </md-list-item>
       </md-list>
     </template>
@@ -52,10 +35,14 @@
 <script>
 import RepoAPI from '../client/RepoAPI.js'
 import ResultList from './mixins/ResultList.js'
+import RepoStats from './subComponents/RepoStats.vue'
 
 export default {
   name: 'repo-list',
   mixins: [ResultList],
+  components: {
+    'repo-stats': RepoStats
+  },
   methods: {
     descriptionSummary: (text) => (text && text.length > 150) ? text.substr(0, 150-1) + '...' : text,
     apiSearch: (query) => RepoAPI.search(decodeURIComponent(query)),

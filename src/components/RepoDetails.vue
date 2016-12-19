@@ -8,39 +8,19 @@
     </template>
     <template v-else>
       <md-card>
-        <md-card-header>
-          <md-card-header-text>
-            <div class="md-title">{{details.name}}</div>
-            <div class="md-subhead">{{details.description}}</div>
-          </md-card-header-text>
-          <md-card-media>
-            <img :src="details.owner.avatar_url" :alt="details.owner.login">
-          </md-card-media>
-        </md-card-header>
+        <md-card-area md-inset>
+          <md-card-header>
+            <md-card-header-text>
+              <div class="md-title">{{details.name}}</div>
+              <div class="md-subhead">{{details.description}}</div>
+            </md-card-header-text>
+            <md-card-media>
+              <img :src="details.owner.avatar_url" :alt="details.owner.login">
+            </md-card-media>
+          </md-card-header>
+        </md-card-area>
         <md-card-content>
-          <div class="statistics">
-            <div class="md-caption">
-              {{details.language}}
-            </div>
-            <md-button @click.stop :href="details.html_url + '/network'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#repo-forked" /></svg>
-              {{details.forks}}
-            </md-button>
-            <md-button @click.stop :href="details.html_url + '/watchers'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#eye" /></svg>
-              {{details.subscribers_count}}
-            </md-button>
-            <md-button @click.stop :href="details.html_url + '/stargazers'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#star" /></svg>
-              {{details.stargazers_count}}
-            </md-button>
-            <md-button @click.stop :href="details.html_url + '/issues'">
-              <svg class="octicon" aria-hidden="true"><use xlink:href="#issue-opened" /></svg>
-
-              {{details.open_issues_count}}
-            </md-button>
-          </div>
-          <a :href="details.html_url"><svg class="octicon" aria-hidden="true"><use xlink:href="#mark-github" /></svg>See on Github</a>
+          <repo-stats :details="details"></repo-stats>
         </md-card-content>
       </md-card>
     </template>
@@ -49,9 +29,13 @@
 
 <script>
 import RepoAPI from '../client/RepoAPI.js'
+import RepoStats from './subComponents/RepoStats.vue'
 
 export default {
   name: 'repo-details',
+  components : {
+    'repo-stats': RepoStats
+  },
   data () {
     return {
       details: {},
