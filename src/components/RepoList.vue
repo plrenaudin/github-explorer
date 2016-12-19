@@ -4,7 +4,7 @@
     <template v-if="loading">
       <div class="loading">
         <em>Loading...</em>
-        <i class="fa fa-spinner" aria-hidden="true"></i>
+        <svg class="octicon" aria-hidden="true"><use xlink:href="#gear" /></svg>
       </div>
     </template>
     <template v-else-if="!results.items || results.items.length < 1">

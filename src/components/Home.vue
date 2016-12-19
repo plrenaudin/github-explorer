@@ -4,8 +4,8 @@
       <div class="field">
           <input v-model="queryInput" @keyup.enter="search" placeholder="Search Repositories or Users"></input>
       </div>
-      <div :class="['icon', {focused: queryInput}]">
-        <i class="fa fa-search"></i>
+      <div class="icon" @click="search">
+        <svg class="octicon" aria-hidden="true"><use xlink:href="#search" /></svg>
       </div>
     </div>
     <div class="resultLists">
