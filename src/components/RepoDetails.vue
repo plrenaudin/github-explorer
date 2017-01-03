@@ -29,6 +29,7 @@
 
 <script>
 import RepoAPI from '../client/RepoAPI.js'
+import ErrorUtils from '../utils/ErrorUtils.js'
 import RepoStats from './subComponents/RepoStats.vue'
 
 export default {
@@ -50,7 +51,7 @@ export default {
         me.details = response.data
       })
       .catch(function (error) {
-        console.error(error)
+        ErrorUtils.displayError(me, error)
       })
       me.loading = true
     }
