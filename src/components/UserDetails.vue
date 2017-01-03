@@ -1,5 +1,6 @@
 <template>
   <div class="userDetails">
+    <user-history :username="name"></user-history>
     <template v-if="loading">
       <div class="loading">
         <em>Loading...</em>
@@ -59,7 +60,6 @@
         </md-card-actions>
       </md-card>
     </template>
-    <user-history :username="name"></user-history>
   </div>
 </template>
 
@@ -68,6 +68,7 @@ import UserAPI from '../client/UserAPI.js'
 import UserHistory from './UserHistory.vue'
 import common from '../client/common.js'
 import DateUtils from '../utils/DateUtils.js'
+import ErrorUtils from '../utils/ErrorUtils.js'
 
 export default {
   name: 'user-details',
@@ -96,7 +97,7 @@ export default {
         me.details = response.data
       })
       .catch(function (error) {
-        console.error(error)
+        ErrorUtils.displayError(me, error)
       })
       me.loading = true
     }

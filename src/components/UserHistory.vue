@@ -28,6 +28,7 @@
 <script>
 import UserAPI from '../client/UserAPI.js'
 import common from '../client/common.js'
+import ErrorUtils from '../utils/ErrorUtils.js'
 
 import defaulteventviewer from './historyItems/DefaultEventViewer.vue'
 import watchevent from './historyItems/WatchEvent.vue'
@@ -85,7 +86,7 @@ export default {
         me.eventList = response.data
       })
       .catch(function (error) {
-        console.error(error)
+        ErrorUtils.displayError(me, error)
       })
       me.loading = true
     }

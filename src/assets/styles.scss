@@ -41,10 +41,21 @@ $light-grey: #ccc;
 
 /*======================= User details ===========================*/
 .userDetails {
+  display: flex;
+  align-items: flex-start;
   .userInfo {
-    width: 50%;
-    min-width: 500px;
-    margin: 0 auto;
+    flex: 0 0 50%;
+  }
+  .userHistory {
+    flex: 0 0 50%;
+    ul {
+      direction: rtl;
+      height: 85vh;
+      overflow: auto;
+      li {
+        direction: ltr;
+      }
+    }
   }
   ul {
     list-style-type: none;

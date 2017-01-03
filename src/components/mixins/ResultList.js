@@ -1,4 +1,5 @@
 import common from '../../client/common.js'
+import ErrorUtils from '../../utils/ErrorUtils.js'
 
 export default {
   props: ['query'],
@@ -29,7 +30,7 @@ export default {
       })
       .catch(function (error) {
         me.loading = false
-        console.error(error)
+        ErrorUtils.displayError(me, error)
       })
     },
     reset() {

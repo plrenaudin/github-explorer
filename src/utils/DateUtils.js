@@ -14,7 +14,7 @@ const formatDateToCalendar = (input) => {
     diff < 7200 && "1 hour ago" ||
     diff < 86400 && Math.floor(diff / 3600) + " hours ago") ||
     day_diff == 1 && "Yesterday" ||
-    day_diff < 7 && day_diff + " days ago" || date.toLocaleString();
+    day_diff < 7 && day_diff + " days ago" || date.toLocaleString('en-GB');
 }
 
 export default {
